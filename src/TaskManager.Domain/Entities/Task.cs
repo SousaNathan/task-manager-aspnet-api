@@ -1,14 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TaskManager.Domain.Entities;
 
 public class Task
 {
+    [Key]
     public long Id { get; set; }
 
     [Required]
     public string Title { get; set; } = string.Empty;
 
+    [Required]
     public string Description { get; set; } = string.Empty ;
 
     [Required]
@@ -24,5 +27,6 @@ public class Task
 
     public long UserId { get; set; }
 
+    [ForeignKey("UserId")]
     public User User { get; set; } = default!;
 }

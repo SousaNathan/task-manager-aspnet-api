@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("TaskManager.API")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("TaskManager.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d8eb9e3f68a726625442c75c4a440b0ed2be715")]
-[assembly: System.Reflection.AssemblyProductAttribute("TaskManager.API")]
-[assembly: System.Reflection.AssemblyTitleAttribute("TaskManager.API")]
+[assembly: System.Reflection.AssemblyProductAttribute("TaskManager.Infrastructure")]
+[assembly: System.Reflection.AssemblyTitleAttribute("TaskManager.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
