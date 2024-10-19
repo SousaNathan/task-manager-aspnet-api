@@ -1,5 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using TaskManager.Application.AutoMapper;
+using TaskManager.Application.UseCases.Login.DoLogin;
+using TaskManager.Application.UseCases.Tasks.Create;
+using TaskManager.Application.UseCases.Tasks.Read.GetAll;
+using TaskManager.Application.UseCases.Tasks.Read.GetById;
+using TaskManager.Application.UseCases.Tasks.Update;
 using TaskManager.Application.UseCases.Users.ChangePassword;
 using TaskManager.Application.UseCases.Users.Create;
 using TaskManager.Application.UseCases.Users.Delete;
@@ -28,5 +33,12 @@ public static class DependencyInjectionExtension
         services.AddScoped<IUpdateUserUseCase, UpdateUserUseCase>();
         services.AddScoped<IChangePasswordUseCase, ChangePasswordUseCase>();
         services.AddScoped<IDeleteUserUseCase, DeleteUserUseCase>();
+        services.AddScoped<IDoLoginUseCase, DoLoginUseCase>();
+        services.AddScoped<IRegisterTaskUseCase, RegisterTaskUseCase>();
+        services.AddScoped<IGetTaskByIdUseCase, GetTaskByIdUseCase>();
+        services.AddScoped<IGetAllTaskUseCase, GetAllTaskUseCase>();
+        services.AddScoped<IUpdateTaskUseCase, UpdateTaskUseCase>();
+        services.AddScoped<IDeleteUserUseCase, DeleteUserUseCase>();
+
     }
 }

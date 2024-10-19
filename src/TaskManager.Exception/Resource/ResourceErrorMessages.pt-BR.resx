@@ -141,4 +141,13 @@
   <data name="PASSWORD_ENTERED_DIFERENT_CURRENT_PASSWORD" xml:space="preserve">
     <value>A senha digitada não corresponde à senha atual.</value>
   </data>
+  <data name="TITLE_REQUIRED" xml:space="preserve">
+    <value>Título obrigatório.</value>
+  </data>
+  <data name="CATEGORY_REQUIRED" xml:space="preserve">
+    <value>Categoria obrigatório.</value>
+  </data>
+  <data name="TASK_NOT_FOUND" xml:space="preserve">
+    <value>Tarefa não encontrada.</value>
+  </data>
 </root>

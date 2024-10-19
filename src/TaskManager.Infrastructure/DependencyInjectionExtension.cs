@@ -47,7 +47,7 @@ public static class DependencyInjectionExtension
 
     private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
     {
-        var connectionString = configuration.GetConnectionString("PostgreConnection");
+        var connectionString = configuration.GetConnectionString("PostgresConnection");
 
         services.AddDbContext<TaskManagerDbContext>(config =>
             config.UseNpgsql(connectionString)); ;

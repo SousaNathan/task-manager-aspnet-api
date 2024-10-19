@@ -24,7 +24,9 @@ public class AutoMapping : Profile
 
     private void EntityToResponse()
     {
-        CreateMap<System.Threading.Tasks.Task, ResponseReadTaskJson>();
+        CreateMap<Domain.Entities.Task, ResponseRegisterTaskJson>();
+        CreateMap<Domain.Entities.Task, ResponseGetTaskJson>();
+
         CreateMap<User, ResponseUserProfileJson>();
     }
 }

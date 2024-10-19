@@ -13,10 +13,10 @@ internal class TaskRepository : ITaskReadOnlyRepository, ITaskWriteOnlyRepositor
         _dbContext = dbContext;
     }
 
-    public async System.Threading.Tasks.Task Add(Domain.Entities.Task expense)
+    public async System.Threading.Tasks.Task Add(Domain.Entities.Task task)
     {
         await _dbContext.Tasks
-            .AddAsync(expense);
+            .AddAsync(task);
     }
 
     public async Task<List<Domain.Entities.Task>> GetAll(User user)
@@ -40,16 +40,16 @@ internal class TaskRepository : ITaskReadOnlyRepository, ITaskWriteOnlyRepositor
             .FirstOrDefaultAsync(e => e.Id == id && e.UserId == user.Id);
     }
 
-    public void Update(Domain.Entities.Task expense)
+    public void Update(Domain.Entities.Task task)
     {
-        _dbContext.Update(expense);
+        _dbContext.Update(task);
     }
 
     public async System.Threading.Tasks.Task Delete(long id)
     {
-        var expense = await _dbContext.Tasks
+        var task = await _dbContext.Tasks
             .FirstAsync(e => e.Id == id);
 
-        _dbContext.Tasks.Remove(expense);
+        _dbContext.Tasks.Remove(task);
     }
 }

@@ -141,4 +141,13 @@
   <data name="PASSWORD_ENTERED_DIFERENT_CURRENT_PASSWORD" xml:space="preserve">
     <value>The entered password does not match the current password.</value>
   </data>
+  <data name="TITLE_REQUIRED" xml:space="preserve">
+    <value>Required title.</value>
+  </data>
+  <data name="CATEGORY_REQUIRED" xml:space="preserve">
+    <value>Required category.</value>
+  </data>
+  <data name="TASK_NOT_FOUND" xml:space="preserve">
+    <value>Task not found.</value>
+  </data>
 </root>

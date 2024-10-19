@@ -6,7 +6,7 @@ using TaskManager.Exception.Resource;
 
 namespace TaskManager.API.Filters;
 
-public class ExceptionFilter
+public class ExceptionFilter : IExceptionFilter
 {
     public void OnException(ExceptionContext context)
     {

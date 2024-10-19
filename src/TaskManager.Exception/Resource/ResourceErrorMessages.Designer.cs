@@ -61,6 +61,15 @@ namespace TaskManager.Exception.Resource {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Required category..
+        /// </summary>
+        public static string CATEGORY_REQUIRED {
+            get {
+                return ResourceManager.GetString("CATEGORY_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The email address is already registered..
         /// </summary>
         public static string EMAIL_ALREADY_REGISTERED {
@@ -120,6 +129,24 @@ namespace TaskManager.Exception.Resource {
         public static string PASSWORD_INVALID {
             get {
                 return ResourceManager.GetString("PASSWORD_INVALID", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Task not found..
+        /// </summary>
+        public static string TASK_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("TASK_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Required title..
+        /// </summary>
+        public static string TITLE_REQUIRED {
+            get {
+                return ResourceManager.GetString("TITLE_REQUIRED", resourceCulture);
             }
         }
         
