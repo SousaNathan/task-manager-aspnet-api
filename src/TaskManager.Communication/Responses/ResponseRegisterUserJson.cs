@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.Communication.Responses;
 
-public class ResponseCreateUserJson
+public class ResponseRegisterUserJson
 {
     public string Name { get; set; } = string.Empty;
 

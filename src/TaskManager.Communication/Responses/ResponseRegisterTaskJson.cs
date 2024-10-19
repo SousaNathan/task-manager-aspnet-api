@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.Communication.Responses;
 
-internal class ResponseCreateTaskJson
+public class ResponseRegisterTaskJson
 {
     public long Id { get; set; }
 

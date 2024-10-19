@@ -1,6 +1,6 @@
 ﻿namespace TaskManager.Communication.Requests;
 
-public class RequestCreateTaskJson
+public class RequestRegisterTaskJson
 {
     public string Title { get; set; } = string.Empty;
 

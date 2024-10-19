@@ -6,4 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\Login\" />
+    <Folder Include="UseCases\Tasks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="11.10.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManager.Communication\TaskManager.Communication.csproj" />
+    <ProjectReference Include="..\TaskManager.Domain\TaskManager.Domain.csproj" />
+    <ProjectReference Include="..\TaskManager.Exception\TaskManager.Exception.csproj" />
+  </ItemGroup>
+
 </Project>
