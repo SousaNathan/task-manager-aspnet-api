@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dzX1IpmmIOg=",
+  "dgSpecHash": "BBnRuBC4PxQ=",
   "success": true,
   "projectFilePath": "D:\\Repositorios\\task-manager-aspnet-api\\src\\TaskManager.API\\TaskManager.API.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,8 @@
     "C:\\Users\\natha\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "C:\\Users\\natha\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\natha\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
+    "C:\\Users\\natha\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\8.0.10\\npgsql.entityframeworkcore.postgresql.8.0.10.nupkg.sha512",
     "C:\\Users\\natha\\.nuget\\packages\\swashbuckle.aspnetcore\\6.9.0\\swashbuckle.aspnetcore.6.9.0.nupkg.sha512",
     "C:\\Users\\natha\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.9.0\\swashbuckle.aspnetcore.swagger.6.9.0.nupkg.sha512",
     "C:\\Users\\natha\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.9.0\\swashbuckle.aspnetcore.swaggergen.6.9.0.nupkg.sha512",

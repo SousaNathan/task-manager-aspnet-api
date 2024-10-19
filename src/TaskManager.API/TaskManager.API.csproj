@@ -18,4 +18,9 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManager.Communication\TaskManager.Communication.csproj" />
+    <ProjectReference Include="..\TaskManager.Infrastructure\TaskManager.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
