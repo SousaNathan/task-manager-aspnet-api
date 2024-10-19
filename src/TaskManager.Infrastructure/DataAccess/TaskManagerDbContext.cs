@@ -14,7 +14,8 @@ internal class TaskManagerDbContext(DbContextOptions options) : DbContext(option
         modelBuilder.Entity<User>(entity =>
         {
             entity.ToTable("users");
-            entity.Property(u => u.UserName).HasColumnName("username");
+            entity.Property(u => u.Id).HasColumnName("id");
+            entity.Property(u => u.Name).HasColumnName("name");
             entity.Property(u => u.Email).HasColumnName("email");
             entity.Property(u => u.Password).HasColumnName("password");
             entity.Property(u => u.CreatedAt).HasColumnName("created_at");
@@ -24,6 +25,7 @@ internal class TaskManagerDbContext(DbContextOptions options) : DbContext(option
         modelBuilder.Entity<Domain.Entities.Task>(entity =>
         {
             entity.ToTable("tasks");
+            entity.Property(t => t.Id).HasColumnName("id");
             entity.Property(t => t.Title).HasColumnName("title");
             entity.Property(t => t.Description).HasColumnName("description");
             entity.Property(t => t.IsCompleted).HasColumnName("is_completed");
