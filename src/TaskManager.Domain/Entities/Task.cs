@@ -24,7 +24,7 @@ public class Task
     public DateTime CreatedAt { get; set; }
 
     [Required]
-    public DateTime UpdatedAt { get; set; }
+    public DateTime? UpdatedAt { get; set; }
 
     public long UserId { get; set; }
 

@@ -2,6 +2,7 @@
 using TaskManager.Application.AutoMapper;
 using TaskManager.Application.UseCases.Login.DoLogin;
 using TaskManager.Application.UseCases.Tasks.Create;
+using TaskManager.Application.UseCases.Tasks.Delete;
 using TaskManager.Application.UseCases.Tasks.Read.GetAll;
 using TaskManager.Application.UseCases.Tasks.Read.GetById;
 using TaskManager.Application.UseCases.Tasks.Update;
@@ -38,7 +39,7 @@ public static class DependencyInjectionExtension
         services.AddScoped<IGetTaskByIdUseCase, GetTaskByIdUseCase>();
         services.AddScoped<IGetAllTaskUseCase, GetAllTaskUseCase>();
         services.AddScoped<IUpdateTaskUseCase, UpdateTaskUseCase>();
-        services.AddScoped<IDeleteUserUseCase, DeleteUserUseCase>();
+        services.AddScoped<IDeleteTaskUseCase, DeleteTaskUseCase>();
 
     }
 }

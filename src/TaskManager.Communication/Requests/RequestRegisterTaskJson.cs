@@ -7,4 +7,6 @@ public class RequestRegisterTaskJson
     public string? Description { get; set; } = string.Empty;
 
     public string Category { get; set; } = string.Empty;
+
+    public bool IsCompleted { get; set; } = false;
 }

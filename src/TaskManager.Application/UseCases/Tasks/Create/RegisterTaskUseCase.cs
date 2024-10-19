@@ -35,8 +35,10 @@ public class RegisterTaskUseCase : IRegisterTaskUseCase
         var loggerUser = await _loggedUser.Get();
         var task = _mapper.Map<Domain.Entities.Task>(request);
 
-        task.UserId = loggerUser.Id;
+        task.IsCompleted = false;
         task.CreatedAt = DateTime.UtcNow;
+        task.UpdatedAt = DateTime.UtcNow;
+        task.UserId = loggerUser.Id;
 
         await _taskWriteOnlyRepository.Add(task);
         await _unitOfWork.Commit();

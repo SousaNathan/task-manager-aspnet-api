@@ -45,6 +45,7 @@ public class RegisterUserUseCase : IRegisterUserUseCase
 
         var user = _mapper.Map<User>(request);
 
+        user.CreatedAt = DateTime.UtcNow;
         user.Password = _passwordEncripter.Encript(request.Password);
         user.UserIdentifier = Guid.NewGuid();
 
