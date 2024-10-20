@@ -28,7 +28,7 @@ public class TaskController : ControllerBase
     }
 
     [HttpGet("get-all")]
-    [ProducesResponseType(typeof(ResponseGetTaskJson), StatusCodes.Status201Created)]
+    [ProducesResponseType(typeof(ResponseGetTaskJson), StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     public async Task<IActionResult> GetAllExpenses([FromServices] IGetAllTaskUseCase useCase)
     {

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TaskManager.Application.UseCases.Login.DoLogin;
 using TaskManager.Application.UseCases.Users.Read;
@@ -11,7 +10,7 @@ namespace TaskManager.API.Controllers;
 [ApiController]
 public class LoginController : ControllerBase
 {
-    [HttpPost("entry")]
+    [HttpPost("sign-in")]
     [ProducesResponseType(typeof(ResponseRegisterUserJson), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ResponseErrorJson), StatusCodes.Status401Unauthorized)]
     public async Task<IActionResult> Login(

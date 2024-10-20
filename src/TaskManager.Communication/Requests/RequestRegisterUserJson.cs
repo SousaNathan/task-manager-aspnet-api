@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace TaskManager.Communication.Requests;
+﻿namespace TaskManager.Communication.Requests;
 
 public class RequestRegisterUserJson
 {
