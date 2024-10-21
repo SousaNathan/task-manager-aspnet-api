@@ -288,17 +288,6 @@ Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura
 
     - Método: ***DELETE***
 
-    - Requisição:
-
-        ```json
-        {
-          "title": "string",
-          "description": "string",
-          "category": "string",
-          "isCompleted": true
-        }
-        ```
-
     - Respostas:
 
         204: ***No Content***
