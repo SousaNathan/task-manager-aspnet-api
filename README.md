@@ -11,9 +11,9 @@ API para gerenciamento de tarefas.
 3. [Configuração do Projeto](#configuração-do-projeto)
 4. [Estrutura do Projeto](#estrutura-do-projeto)
 5. [Endpoints da API](#endpoints-da-api)
-    - [Login](#login)
-    - [User](#user)
-    - [Task](#task)
+   - [Login](#login)
+   - [User](#user)
+   - [Task](#task)
 
 ---
 
@@ -37,34 +37,34 @@ O **TaskManager** é uma API robusta para o gerenciamento de usuários e tarefas
 
 1. **Clonar o Repositório:**
 
-    ```bash
-    git clone https://github.com/usuario/taskmanager.git
-    cd taskmanager
-    ```
+   ```bash
+   git clone https://github.com/usuario/taskmanager.git
+   cd taskmanager
+   ```
 
 2. **Configurar o Banco de Dados:**
 
-    No arquivo appsettings.json, defina a string de conexão para o PostgreSQL:
+   No arquivo appsettings.json, defina a string de conexão para o PostgreSQL:
 
-    ```json
-    "ConnectionStrings": {
-    "PostgresConnection": "Host=localhost;Database=TaskManagerDb;Username=usuario;Password=senha"
-    }
-    ```
+   ```json
+   "ConnectionStrings": {
+   "PostgresConnection": "Host=localhost;Database=TaskManagerDb;Username=usuario;Password=senha"
+   }
+   ```
 
-4. **Rodar as Migrações:**
+3. **Rodar as Migrações:**
 
-    Para aplicar as migrações do banco de dados, rode o seguinte comando dentro do diretório TaskManager.Infrastructure:
+   Para aplicar as migrações do banco de dados, rode o seguinte comando dentro do diretório TaskManager.Infrastructure:
 
-    ```bash
-    dotnet ef database update
-    ```
+   ```bash
+   dotnet ef database update
+   ```
 
-6. **Executar o Projeto:**
+4. **Executar o Projeto:**
 
-    ```bash
-    dotnet run
-    ```
+   ```bash
+   dotnet run
+   ```
 
 ---
 
@@ -73,16 +73,16 @@ O **TaskManager** é uma API robusta para o gerenciamento de usuários e tarefas
 O projeto está dividido nas seguintes camadas principais:
 
 - TaskManager.Application:
-Contém os casos de uso, mapeamento de AutoMapper, e injeções de dependências.
+  Contém os casos de uso, mapeamento de AutoMapper, e injeções de dependências.
 
 - TaskManager.Communication:
-Define os modelos de requisições e respostas que trafegam entre o cliente e a API.
+  Define os modelos de requisições e respostas que trafegam entre o cliente e a API.
 
 - TaskManager.Domain:
-Contém as entidades e interfaces que representam as regras de negócio.
+  Contém as entidades e interfaces que representam as regras de negócio.
 
 - TaskManager.Infrastructure:
-Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura como criptografia e geração de tokens.
+  Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura como criptografia e geração de tokens.
 
 ---
 
@@ -92,56 +92,54 @@ Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura
 
 1. **Fazer Login**
 
-    - URL: `/taskmanager-api/login/sign-in`
+   - URL: `/taskmanager-api/login/sign-in`
 
-    - Método: ***POST***
+   - Método: **_POST_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "email": "string",
-          "password": "string"
-        }
-        ```
+     ```json
+     {
+       "email": "string",
+       "password": "string"
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        200: ***OK***
+     200: **_OK_**
 
-        ```json
-        {
-          "name": "string",
-          "token": "string"
-        }
-        ```
+     ```json
+     {
+       "name": "string",
+       "token": "string"
+     }
+     ```
 
-        401: ***Anauthorized***
+     401: **_Unauthorized_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 2. **Obter Usuário Logado**
 
-    - URL: `/taskmanager-api/login/get-profile`
+   - URL: `/taskmanager-api/login/get-profile`
 
-    - Método: ***GET***
+   - Método: **_GET_**
 
-    - Respostas:
+   - Respostas:
 
-        200: ***OK***
+     200: **_OK_**
 
-        ```json
-        {
-          "name": "string",
-          "email": "string"
-        }
-        ```
+     ```json
+     {
+       "name": "string",
+       "email": "string"
+     }
+     ```
 
 ---
 
@@ -149,158 +147,148 @@ Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura
 
 1. **Cadastrar Tarefa**
 
-    - URL: `/api/tasks/register`
+   - URL: `/api/tasks/register`
 
-    - Método: ***POST***
+   - Método: **_POST_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "title": "string",
-          "description": "string",
-          "category": "string",
-          "isCompleted": true
-        }
-        ```
+     ```json
+     {
+       "title": "string",
+       "description": "string",
+       "category": "string",
+       "isCompleted": true
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        201: ***Created***
+     201: **_Created_**
 
-        ```json
-        {
-          "id": 0,
-          "title": "string"
-        }        
-        ```
+     ```json
+     {
+       "id": 0,
+       "title": "string"
+     }
+     ```
 
-        400: ***Bad Request***
+     400: **_Bad Request_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 2. **Listar Todas as Tarefas**
 
-    - URL: `/taskmanager-api/task/get-all`
+   - URL: `/taskmanager-api/task/get-all`
 
-    - Método: ***GET***
+   - Método: **_GET_**
 
-    - Respostas:
+   - Respostas:
 
-        200: ***Created***
+     200: **_Created_**
 
-        ```json
-        {
-          "id": 0,
-          "title": "string",
-          "description": "string",
-          "isCompleted": true,
-          "category": "string",
-          "createdAt": "2024-10-20T06:26:49.542Z",
-          "updatedAt": "2024-10-20T06:26:49.542Z"
-        }
-        ```
+     ```json
+     {
+       "id": 0,
+       "title": "string",
+       "description": "string",
+       "isCompleted": true,
+       "category": "string",
+       "createdAt": "2024-10-20T06:26:49.542Z",
+       "updatedAt": "2024-10-20T06:26:49.542Z"
+     }
+     ```
 
-        204: ***No Content***
+     204: **_No Content_**
 
 3. **Obter Tarefa**
 
-    - URL: `taskmanager-api/task/get-by/{id}`
+   - URL: `taskmanager-api/task/get-by/{id}`
 
-    - Método: ***PUT***
+   - Método: **_PUT_**
 
-    - Respostas:
+   - Respostas:
 
-        200: ***OK***
+     200: **_OK_**
 
-        ```json
-        {
-          "id": 0,
-          "title": "string",
-          "description": "string",
-          "isCompleted": true,
-          "category": "string",
-          "createdAt": "2024-10-20T06:27:58.680Z",
-          "updatedAt": "2024-10-20T06:27:58.680Z"
-        }
-        ```
+     ```json
+     {
+       "id": 0,
+       "title": "string",
+       "description": "string",
+       "isCompleted": true,
+       "category": "string",
+       "createdAt": "2024-10-20T06:27:58.680Z",
+       "updatedAt": "2024-10-20T06:27:58.680Z"
+     }
+     ```
 
-        204: ***Not Found***
+     204: **_Not Found_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 4. **Atualizar Tarefa**
 
-    - URL: `/taskmanager-api/task/update/{id}`
+   - URL: `/taskmanager-api/task/update/{id}`
 
-    - Método: ***PUT***
+   - Método: **_PUT_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "title": "string",
-          "description": "string",
-          "category": "string",
-          "isCompleted": true
-        }
-        ```
+     ```json
+     {
+       "title": "string",
+       "description": "string",
+       "category": "string",
+       "isCompleted": true
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        204: ***No Content***
+     204: **_No Content_**
 
-        400: ***Bad Request***
+     400: **_Bad Request_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
-        404: ***Not Found***
+     404: **_Not Found_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 5. **Deletar Tarefa**
 
-    - URL: `/taskmanager-api/task/delete/{id}`
+   - URL: `/taskmanager-api/task/delete/{id}`
 
-    - Método: ***DELETE***
+   - Método: **_DELETE_**
 
-    - Respostas:
+   - Respostas:
 
-        204: ***No Content***
+     204: **_No Content_**
 
-        404: ***Not Found***
+     404: **_Not Found_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 ---
 
@@ -308,109 +296,102 @@ Implementa o acesso a dados, repositórios, e outros serviços de infraestrutura
 
 1. **Cadastrar Usuário**
 
-    - URL:    `/taskmanager-api/users/register`
+   - URL: `/taskmanager-api/users/register`
 
-    - Método:   ***POST***
+   - Método: **_POST_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "name": "string",
-          "email": "string",
-          "password": "string"
-        }
-        ```
+     ```json
+     {
+       "name": "string",
+       "email": "string",
+       "password": "string"
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        201:    ***Created***
+     201: **_Created_**
 
-        ```json
-        {
-          "name": "string",
-          "token": "string"
-        }
-        
-        ```
+     ```json
+     {
+       "name": "string",
+       "token": "string"
+     }
+     ```
 
-        400:    ***Bad Request***
+     400: **_Bad Request_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 2. **Atualizar Usuário**
 
-    - URL:    `/taskmanager-api/user/update`
+   - URL: `/taskmanager-api/user/update`
 
-    - Método:   ***PUT***
+   - Método: **_PUT_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "name": "string",
-          "email": "string"
-        }
-        ```
+     ```json
+     {
+       "name": "string",
+       "email": "string"
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        204:    ***No Content***
+     204: **_No Content_**
 
-        400:    ***Bad Request***
+     400: **_Bad Request_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 3. **Mudar Senha**
 
-    - URL:  `/taskmanager-api/users/change-password`
+   - URL: `/taskmanager-api/users/change-password`
 
-    - Método: ***PUT***
+   - Método: **_PUT_**
 
-    - Requisição:
+   - Requisição:
 
-        ```json
-        {
-          "password": "string",
-          "newPassword": "string"
-        }
-        ```
+     ```json
+     {
+       "password": "string",
+       "newPassword": "string"
+     }
+     ```
 
-    - Respostas:
+   - Respostas:
 
-        204:  ***No Content***
+     204: **_No Content_**
 
-        400:  ***Bad Request***
+     400: **_Bad Request_**
 
-        ```json
-        {
-          "errorMessages": [
-            "string"
-          ]
-        }
-        ```
+     ```json
+     {
+       "errorMessages": ["string"]
+     }
+     ```
 
 4. **Deletar Usuário Logado**
 
-    - URL:    `/taskmanager-api/user/delete`
+   - URL: `/taskmanager-api/user/delete`
 
-    - Método: ***DELETE***
+   - Método: **_DELETE_**
 
-    - Respostas:
+   - Respostas:
 
-        204:    **No Content**
+     204: **No Content**
 
 ---
 

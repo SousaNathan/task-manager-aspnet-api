@@ -9,12 +9,12 @@ namespace TaskManager.Infrastructure.Security.Tokens;
 
 public class JwtTokenGenerator : IAccessTokenGenerator
 {
-    private readonly uint _inspirationTimeMinutes;
+    private readonly uint _expirationTimeMinutes;
     private readonly string _signingKey;
 
-    public JwtTokenGenerator(uint inspirationTimeMinutes, string signingKey)
+    public JwtTokenGenerator(uint expirationTimeMinutes, string signingKey)
     {
-        _inspirationTimeMinutes = inspirationTimeMinutes;
+        _expirationTimeMinutes = expirationTimeMinutes;
         _signingKey = signingKey;
     }
 
@@ -28,7 +28,7 @@ public class JwtTokenGenerator : IAccessTokenGenerator
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Expires = DateTime.UtcNow.AddMinutes(_inspirationTimeMinutes),
+            Expires = DateTime.UtcNow.AddMinutes(_expirationTimeMinutes),
             SigningCredentials = new SigningCredentials(SecurityKey(), SecurityAlgorithms.HmacSha256Signature),
             Subject = new ClaimsIdentity(claims)
         };
